@@ -1,186 +1,340 @@
+// ============================================
+// PRODUKTS DATA - রিয়েল ইকমার্সে এটা API থেকে আসে
+// ============================================
 const PRODUCTS = [
+  // ===== ELECTRONICS =====
   {
     id: 1,
-    name: "স্মার্টফোন Samsung Galaxy A15",
+    name: "Samsung Galaxy A15 5G (6GB/128GB)",
     price: 18500,
-    oldPrice: 21000,
+    oldPrice: 22000,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
-    description: "৬.৫ ইঞ্চি AMOLED ডিসপ্লে, ৫০MP ক্যামেরা, ৫০০০mAh ব্যাটারি, ৬GB RAM + ১২৮GB স্টোরেজ। অফিসিয়াল ওয়ারেন্টিসহ।",
+    subcategory: "Mobile",
+    brand: "Samsung",
+    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500",
+    images: [
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500"
+    ],
+    description: "৬.৫ ইঞ্চি Super AMOLED ডিসপ্লে, ৫০MP ট্রিপল ক্যামেরা, ৫০০০mAh ব্যাটারি, ২৫W ফাস্ট চার্জিং। ১ বছর অফিসিয়াল ওয়ারেন্টি।",
+    features: ["6.5\" AMOLED Display", "50MP Camera", "5000mAh Battery", "5G Support", "1 Year Warranty"],
     stock: 15,
-    rating: 4.5
+    rating: 4.5,
+    reviews: 234,
+    sold: 1200,
+    badge: "hot",
+    freeShipping: true
   },
   {
     id: 2,
-    name: "Wireless Bluetooth Headphone",
-    price: 2450,
-    oldPrice: 3200,
+    name: "Sony WH-1000XM5 Wireless Headphone",
+    price: 28500,
+    oldPrice: 35000,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
-    description: "নয়েজ ক্যান্সেলিং, ৩০ ঘণ্টা ব্যাকআপ, Bluetooth 5.3। মিউজিক ও গেমিং এর জন্য পারফেক্ট।",
-    stock: 30,
-    rating: 4.3
+    subcategory: "Audio",
+    brand: "Sony",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    images: [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500"
+    ],
+    description: "ইন্ডাস্ট্রি-লিডিং নয়েজ ক্যান্সেলিং, ৩০ ঘণ্টা ব্যাকআপ, প্রিমিয়াম সাউন্ড কোয়ালিটি।",
+    features: ["Noise Cancelling", "30h Battery", "Bluetooth 5.2", "Premium Sound"],
+    stock: 8,
+    rating: 4.9,
+    reviews: 567,
+    sold: 890,
+    badge: "premium",
+    freeShipping: true
   },
   {
     id: 3,
-    name: "পুরুষদের স্লিম ফিট শার্ট",
-    price: 850,
-    oldPrice: 1200,
-    category: "fashion",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400",
-    description: "১০০% কটন ফ্যাব্রিক, আরামদায়ক ও টেকসই। অফিস ও ক্যাজুয়াল দুটোই মানায়।",
-    stock: 50,
-    rating: 4.7
+    name: "Apple Watch Series 9 GPS 45mm",
+    price: 45000,
+    oldPrice: 52000,
+    category: "electronics",
+    subcategory: "Wearable",
+    brand: "Apple",
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500",
+    images: ["https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"],
+    description: "Advanced health monitoring, Always-On Retina display, Water resistant।",
+    features: ["Always-On Display", "ECG Monitor", "GPS", "50m Water Resistant"],
+    stock: 5,
+    rating: 4.8,
+    reviews: 892,
+    sold: 456,
+    badge: "new",
+    freeShipping: true
   },
   {
     id: 4,
-    name: "মেয়েদের হ্যান্ডব্যাগ",
-    price: 1500,
-    oldPrice: 2200,
-    category: "fashion",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400",
-    description: "প্রিমিয়াম লেদার, একাধিক কম্পার্টমেন্ট, ফ্যাশনেবল ডিজাইন।",
-    stock: 22,
-    rating: 4.4
+    name: "Logitech MX Master 3S Mouse",
+    price: 8500,
+    oldPrice: 10500,
+    category: "electronics",
+    subcategory: "Accessories",
+    brand: "Logitech",
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",
+    images: ["https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500"],
+    description: "প্রফেশনাল ওয়্যারলেস মাউস, ৮K DPI, মাল্টি-ডিভাইস সাপোর্ট।",
+    features: ["8000 DPI", "Bluetooth + USB", "Multi-device", "70 Days Battery"],
+    stock: 20,
+    rating: 4.7,
+    reviews: 345,
+    sold: 670,
+    badge: null,
+    freeShipping: false
   },
+
+  // ===== FASHION =====
   {
     id: 5,
-    name: "মিনিকেট চাল (৫ কেজি)",
-    price: 420,
-    oldPrice: 480,
-    category: "grocery",
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400",
-    description: "১০০% খাঁটি ও অর্গানিক মিনিকেট চাল। প্রিমিয়াম কোয়ালিটি।",
-    stock: 100,
-    rating: 4.8
+    name: "প্রিমিয়াম কটন ফরমাল শার্ট (Men)",
+    price: 1250,
+    oldPrice: 1800,
+    category: "fashion",
+    subcategory: "Men's Shirt",
+    brand: "Ecstasy",
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",
+    images: ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500"],
+    description: "১০০% এক্সপোর্ট কোয়ালিটি কটন, স্লিম ফিট, আরামদায়ক। সব সাইজ উপলব্ধ।",
+    features: ["100% Cotton", "Slim Fit", "All Sizes", "Machine Wash"],
+    stock: 50,
+    rating: 4.6,
+    reviews: 234,
+    sold: 1500,
+    badge: "bestseller",
+    freeShipping: false,
+    sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: 6,
-    name: "অর্গানিক মধু (৫০০ গ্রাম)",
-    price: 550,
-    oldPrice: 700,
-    category: "grocery",
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400",
-    description: "সুন্দরবনের প্রাকৃতিক মধু, ল্যাব টেস্টেড। কোনো প্রিজারভেটিভ নেই।",
-    stock: 40,
-    rating: 4.9
+    name: "মেয়েদের প্রিমিয়াম লেদার হ্যান্ডব্যাগ",
+    price: 2200,
+    oldPrice: 3500,
+    category: "fashion",
+    subcategory: "Women's Bag",
+    brand: "Lavie",
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500",
+    images: ["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"],
+    description: "Genuine লেদার, ৫টি কম্পার্টমেন্ট, প্রিমিয়াম ফিনিশিং।",
+    features: ["Genuine Leather", "5 Compartments", "Premium Finish"],
+    stock: 22,
+    rating: 4.5,
+    reviews: 189,
+    sold: 450,
+    badge: "new",
+    freeShipping: true
   },
   {
     id: 7,
-    name: "প্রোগ্রামিং শেখার বাংলা বই",
-    price: 380,
-    oldPrice: 500,
-    category: "books",
-    image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400",
-    description: "JavaScript, HTML, CSS শেখার সম্পূর্ণ বাংলা গাইড। বিগিনার থেকে অ্যাডভান্সড।",
-    stock: 60,
-    rating: 4.6
+    name: "Nike Air Max Running Shoes",
+    price: 8500,
+    oldPrice: 11000,
+    category: "fashion",
+    subcategory: "Shoes",
+    brand: "Nike",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"],
+    description: "Lightweight, Breathable, Advanced Cushioning। রানিং ও জিমের জন্য পারফেক্ট।",
+    features: ["Air Cushioning", "Breathable Mesh", "Durable Rubber Sole"],
+    stock: 30,
+    rating: 4.7,
+    reviews: 567,
+    sold: 890,
+    badge: "hot",
+    freeShipping: true,
+    sizes: ["40", "41", "42", "43", "44"]
   },
+
+  // ===== GROCERY =====
   {
     id: 8,
-    name: "Non-Stick Frying Pan",
-    price: 950,
-    oldPrice: 1350,
-    category: "home",
-    image: "https://images.unsplash.com/photo-1584990347449-a1c1b2b0e5e4?w=400",
-    description: "প্রিমিয়াম কোয়ালিটি নন-স্টিক প্যান, তেল ছাড়াই রান্না করা যায়।",
-    stock: 35,
-    rating: 4.2
+    name: "মিনিকেট চাল প্রিমিয়াম (৫ কেজি)",
+    price: 425,
+    oldPrice: 500,
+    category: "grocery",
+    subcategory: "Rice",
+    brand: "Fresh BD",
+    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",
+    images: ["https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500"],
+    description: "১০০% খাঁটি মিনিকেট চাল, প্রিমিয়াম কোয়ালিটি। সরাসরি কৃষকের কাছ থেকে।",
+    features: ["100% Pure", "Premium Quality", "Fresh Stock"],
+    stock: 100,
+    rating: 4.8,
+    reviews: 456,
+    sold: 3200,
+    badge: "bestseller",
+    freeShipping: true
   },
   {
     id: 9,
-    name: "LED Desk Lamp",
-    price: 780,
-    oldPrice: 1100,
-    category: "home",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400",
-    description: "টাচ কন্ট্রোল, ৩ লেভেল ব্রাইটনেস, USB চার্জিং পোর্ট। পড়াশোনার জন্য আদর্শ।",
-    stock: 25,
-    rating: 4.5
+    name: "সুন্দরবনের প্রাকৃতিক মধু (৫০০ গ্রাম)",
+    price: 650,
+    oldPrice: 850,
+    category: "grocery",
+    subcategory: "Honey",
+    brand: "Natural BD",
+    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500",
+    images: ["https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500"],
+    description: "সুন্দরবনের প্রাকৃতিক মধু, ল্যাব টেস্টেড, কোনো প্রিজারভেটিভ নেই।",
+    features: ["100% Natural", "Lab Tested", "No Preservatives"],
+    stock: 40,
+    rating: 4.9,
+    reviews: 789,
+    sold: 2100,
+    badge: "hot",
+    freeShipping: true
   },
+
+  // ===== BOOKS =====
   {
     id: 10,
-    name: "Smart Watch",
-    price: 3200,
-    oldPrice: 4500,
-    category: "electronics",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
-    description: "হার্ট রেট মনিটর, স্টেপ কাউন্ট, নোটিফিকেশন সাপোর্ট, ৭ দিন ব্যাকআপ।",
-    stock: 18,
-    rating: 4.4
+    name: "JavaScript: The Complete Guide (Bengali)",
+    price: 450,
+    oldPrice: 600,
+    category: "books",
+    subcategory: "Programming",
+    brand: "Tech Books BD",
+    image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500",
+    images: ["https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500"],
+    description: "JavaScript, HTML, CSS শেখার সম্পূর্ণ বাংলা গাইড। বিগিনার থেকে অ্যাডভান্সড।",
+    features: ["Bengali Language", "500+ Pages", "Practical Examples"],
+    stock: 60,
+    rating: 4.6,
+    reviews: 234,
+    sold: 567,
+    badge: null,
+    freeShipping: false
   },
+
+  // ===== HOME =====
   {
     id: 11,
-    name: "বাচ্চাদের খেলনা গাড়ি",
-    price: 450,
-    oldPrice: 650,
+    name: "Non-Stick Frying Pan Premium",
+    price: 1250,
+    oldPrice: 1800,
     category: "home",
-    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400",
-    description: "নিরাপদ প্লাস্টিক, ব্যাটারি চালিত, রিমোট কন্ট্রোল সহ।",
-    stock: 45,
-    rating: 4.3
+    subcategory: "Kitchen",
+    brand: "Prestige",
+    image: "https://images.unsplash.com/photo-1584990347449-a1c1b2b0e5e4?w=500",
+    images: ["https://images.unsplash.com/photo-1584990347449-a1c1b2b0e5e4?w=500"],
+    description: "প্রিমিয়াম নন-স্টিক কোটিং, তেল ছাড়াই রান্না। ২ বছর ওয়ারেন্টি।",
+    features: ["Non-Stick Coating", "2 Year Warranty", "Induction Compatible"],
+    stock: 35,
+    rating: 4.4,
+    reviews: 345,
+    sold: 780,
+    badge: null,
+    freeShipping: false
   },
   {
     id: 12,
-    name: "স্পোর্টস স্নিকার",
+    name: "LED Smart Desk Lamp with USB",
+    price: 950,
+    oldPrice: 1400,
+    category: "home",
+    subcategory: "Lighting",
+    brand: "Philips",
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
+    images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"],
+    description: "টাচ কন্ট্রোল, ৩ লেভেল ব্রাইটনেস, USB চার্জিং পোর্ট, Eye Protection।",
+    features: ["Touch Control", "3 Brightness Levels", "USB Port", "Eye Protection"],
+    stock: 25,
+    rating: 4.5,
+    reviews: 234,
+    sold: 560,
+    badge: null,
+    freeShipping: false
+  },
+
+  // ===== আরও প্রোডাক্ট =====
+  {
+    id: 13,
+    name: "Xiaomi Redmi Note 13 Pro",
+    price: 24500,
+    oldPrice: 28000,
+    category: "electronics",
+    subcategory: "Mobile",
+    brand: "Xiaomi",
+    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
+    images: ["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"],
+    description: "২০০MP ক্যামেরা, ৬৭W ফাস্ট চার্জ, AMOLED ডিসপ্লে।",
+    features: ["200MP Camera", "67W Fast Charge", "AMOLED Display"],
+    stock: 18,
+    rating: 4.6,
+    reviews: 456,
+    sold: 900,
+    badge: "hot",
+    freeShipping: true
+  },
+  {
+    id: 14,
+    name: "Adidas Running T-Shirt",
     price: 1850,
     oldPrice: 2500,
     category: "fashion",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
-    description: "লাইটওয়েট, আরামদায়ক, রানিং ও জিমের জন্য পারফেক্ট। সব সাইজ আছে।",
-    stock: 28,
-    rating: 4.6
+    subcategory: "Men's T-Shirt",
+    brand: "Adidas",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+    images: ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"],
+    description: "Dry-Fit টেকনোলজি, শ্বাসপ্রশ্বাসযোগ্য ফ্যাব্রিক, স্পোর্টসের জন্য আদর্শ।",
+    features: ["Dry-Fit", "Breathable", "Quick Dry"],
+    stock: 40,
+    rating: 4.5,
+    reviews: 234,
+    sold: 670,
+    badge: null,
+    freeShipping: false,
+    sizes: ["S", "M", "L", "XL"]
+  },
+  {
+    id: 15,
+    name: "Casio Analog Watch (Men)",
+    price: 4500,
+    oldPrice: 6000,
+    category: "fashion",
+    subcategory: "Watch",
+    brand: "Casio",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"],
+    description: "Genuine Casio, স্টেইনলেস স্টিল, Water Resistant।",
+    features: ["Water Resistant", "Stainless Steel", "2 Year Warranty"],
+    stock: 12,
+    rating: 4.7,
+    reviews: 189,
+    sold: 345,
+    badge: null,
+    freeShipping: true
+  },
+  {
+    id: 16,
+    name: "দারুচিনি গুঁড়া প্রিমিয়াম (২০০ গ্রাম)",
+    price: 180,
+    oldPrice: 250,
+    category: "grocery",
+    subcategory: "Spices",
+    brand: "Fresh BD",
+    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500",
+    images: ["https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500"],
+    description: "খাঁটি দারুচিনি গুঁড়া, সুগন্ধি ও স্বাস্থ্যকর।",
+    features: ["100% Pure", "Fresh Ground"],
+    stock: 80,
+    rating: 4.6,
+    reviews: 123,
+    sold: 890,
+    badge: null,
+    freeShipping: false
   }
 ];
-document.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id'));
-  const product = PRODUCTS.find(p => p.id === id);
-  const container = document.getElementById('productContainer');
 
-  if (!product) {
-    container.innerHTML = '<h2 style="padding:40px;text-align:center;">প্রোডাক্ট পাওয়া যায়নি 😔</h2>';
-    return;
-  }
-
-  document.title = product.name + ' - ShopBD';
-
-  container.innerHTML = `
-    <div class="product-detail">
-      <img src="${product.image}" alt="${product.name}" />
-      <div>
-        <h1>${product.name}</h1>
-        <p style="color:#777;">⭐ ${product.rating} | স্টকে আছে: ${product.stock} পিস</p>
-        <div class="price-big">
-          ${formatBDT(product.price)}
-          ${product.oldPrice ? `<span style="font-size:16px;color:#999;text-decoration:line-through;margin-left:10px;">${formatBDT(product.oldPrice)}</span>` : ''}
-        </div>
-        <p>${product.description}</p>
-
-        <div class="qty-box">
-          <button id="minusBtn">−</button>
-          <input type="number" id="qtyInput" value="1" min="1" max="${product.stock}" />
-          <button id="plusBtn">+</button>
-        </div>
-
-        <button class="btn-primary" id="addBtn">🛒 কার্টে যোগ করুন</button>
-        <button class="btn-primary" id="buyBtn" style="background:#27ae60;margin-left:8px;">⚡ এখনই কিনুন</button>
-      </div>
-    </div>
-  `;
-
-  const qtyInput = document.getElementById('qtyInput');
-  document.getElementById('plusBtn').onclick = () => {
-    if (parseInt(qtyInput.value) < product.stock) qtyInput.value = parseInt(qtyInput.value) + 1;
-  };
-  document.getElementById('minusBtn').onclick = () => {
-    if (parseInt(qtyInput.value) > 1) qtyInput.value = parseInt(qtyInput.value) - 1;
-  };
-  document.getElementById('addBtn').onclick = () => {
-    addToCart(product.id, parseInt(qtyInput.value));
-  };
-  document.getElementById('buyBtn').onclick = () => {
-    addToCart(product.id, parseInt(qtyInput.value));
-    setTimeout(() => window.location.href = 'checkout.html', 400);
-  };
-});
+// Categories with names in Bengali
+const CATEGORIES = [
+  { id: "all", name: "সব", icon: "🏠" },
+  { id: "electronics", name: "ইলেকট্রনিক্স", icon: "📱" },
+  { id: "fashion", name: "ফ্যাশন", icon: "👕" },
+  { id: "grocery", name: "গ্রোসারি", icon: "🥫" },
+  { id: "books", name: "বই", icon: "📚" },
+  { id: "home", name: "হোম", icon: "🏡" }
+];

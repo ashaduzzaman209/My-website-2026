@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopBD - অনলাইন শপিং</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🛍️ ShopBD</a>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="প্রোডাক্ট খুঁজুন..." />
+        <button id="searchBtn">🔍</button>
+      </div>
+
+      <nav class="nav">
+        <a href="cart.html" class="cart-link">
+          🛒 কার্ট <span id="cartCount" class="cart-count">0</span>
+        </a>
+        <a href="orders.html">📦 অর্ডার</a>
+        <a href="login.html" id="authLink">👤 লগইন</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CATEGORY BAR -->
+  <div class="category-bar">
+    <div class="container">
+      <button class="cat-btn active" data-cat="all">সব</button>
+      <button class="cat-btn" data-cat="electronics">ইলেকট্রনিক্স</button>
+      <button class="cat-btn" data-cat="fashion">ফ্যাশন</button>
+      <button class="cat-btn" data-cat="grocery">গ্রোসারি</button>
+      <button class="cat-btn" data-cat="books">বই</button>
+      <button class="cat-btn" data-cat="home">হোম</button>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <main class="container">
+    <h2 class="section-title">আমাদের প্রোডাক্ট</h2>
+    <div id="productGrid" class="product-grid"></div>
+    <p id="noResult" class="no-result" style="display:none;">কোনো প্রোডাক্ট পাওয়া যায়নি 😔</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 ShopBD | সব অধিকার সংরক্ষিত</p>
+      <p>📞 01700-000000 | ✉️ support@shopbd.com</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

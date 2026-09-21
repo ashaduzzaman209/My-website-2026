@@ -132,3 +132,55 @@ const PRODUCTS = [
     rating: 4.6
   }
 ];
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'));
+  const product = PRODUCTS.find(p => p.id === id);
+  const container = document.getElementById('productContainer');
+
+  if (!product) {
+    container.innerHTML = '<h2 style="padding:40px;text-align:center;">প্রোডাক্ট পাওয়া যায়নি 😔</h2>';
+    return;
+  }
+
+  document.title = product.name + ' - ShopBD';
+
+  container.innerHTML = `
+    <div class="product-detail">
+      <img src="${product.image}" alt="${product.name}" />
+      <div>
+        <h1>${product.name}</h1>
+        <p style="color:#777;">⭐ ${product.rating} | স্টকে আছে: ${product.stock} পিস</p>
+        <div class="price-big">
+          ${formatBDT(product.price)}
+          ${product.oldPrice ? `<span style="font-size:16px;color:#999;text-decoration:line-through;margin-left:10px;">${formatBDT(product.oldPrice)}</span>` : ''}
+        </div>
+        <p>${product.description}</p>
+
+        <div class="qty-box">
+          <button id="minusBtn">−</button>
+          <input type="number" id="qtyInput" value="1" min="1" max="${product.stock}" />
+          <button id="plusBtn">+</button>
+        </div>
+
+        <button class="btn-primary" id="addBtn">🛒 কার্টে যোগ করুন</button>
+        <button class="btn-primary" id="buyBtn" style="background:#27ae60;margin-left:8px;">⚡ এখনই কিনুন</button>
+      </div>
+    </div>
+  `;
+
+  const qtyInput = document.getElementById('qtyInput');
+  document.getElementById('plusBtn').onclick = () => {
+    if (parseInt(qtyInput.value) < product.stock) qtyInput.value = parseInt(qtyInput.value) + 1;
+  };
+  document.getElementById('minusBtn').onclick = () => {
+    if (parseInt(qtyInput.value) > 1) qtyInput.value = parseInt(qtyInput.value) - 1;
+  };
+  document.getElementById('addBtn').onclick = () => {
+    addToCart(product.id, parseInt(qtyInput.value));
+  };
+  document.getElementById('buyBtn').onclick = () => {
+    addToCart(product.id, parseInt(qtyInput.value));
+    setTimeout(() => window.location.href = 'checkout.html', 400);
+  };
+});

@@ -1,61 +1,702 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopBD - অনলাইন শপিং</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We provide the best web development, design and digital marketing services">
+    <title>TechHub - Digital Solution Provider</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">🛍️ ShopBD</a>
-
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="প্রোডাক্ট খুঁজুন..." />
-        <button id="searchBtn">🔍</button>
-      </div>
-
-      <nav class="nav">
-        <a href="cart.html" class="cart-link">
-          🛒 কার্ট <span id="cartCount" class="cart-count">0</span>
-        </a>
-        <a href="orders.html">📦 অর্ডার</a>
-        <a href="login.html" id="authLink">👤 লগইন</a>
-      </nav>
+    <!-- ===== Top Bar ===== -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-info">
+                <span><i class="fas fa-phone"></i> +880 1712345678</span>
+                <span><i class="fas fa-envelope"></i> info@techhub.com</span>
+            </div>
+            <div class="top-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- CATEGORY BAR -->
-  <div class="category-bar">
-    <div class="container">
-      <button class="cat-btn active" data-cat="all">সব</button>
-      <button class="cat-btn" data-cat="electronics">ইলেকট্রনিক্স</button>
-      <button class="cat-btn" data-cat="fashion">ফ্যাশন</button>
-      <button class="cat-btn" data-cat="grocery">গ্রোসারি</button>
-      <button class="cat-btn" data-cat="books">বই</button>
-      <button class="cat-btn" data-cat="home">হোম</button>
-    </div>
-  </div>
+    <!-- ===== Navigation Bar ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-code"></i> Tech<span>Hub</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#contact" class="btn-quote">Free Quote</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- PRODUCTS -->
-  <main class="container">
-    <h2 class="section-title">আমাদের প্রোডাক্ট</h2>
-    <div id="productGrid" class="product-grid"></div>
-    <p id="noResult" class="no-result" style="display:none;">কোনো প্রোডাক্ট পাওয়া যায়নি 😔</p>
-  </main>
+    <!-- ===== Hero Section ===== -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">🚀 #1 Digital Agency</span>
+                <h1>Make Your Business <span class="highlight">Digital</span> Today</h1>
+                <p>We provide modern web development, mobile apps, graphic design and digital marketing services. We are committed to turning your dreams into reality.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">View Our Services <i class="fas fa-arrow-right"></i></a>
+                    <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>300+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Team Working">
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 ShopBD | সব অধিকার সংরক্ষিত</p>
-      <p>📞 01700-000000 | ✉️ support@shopbd.com</p>
-    </div>
-  </footer>
+    <!-- ===== About Section ===== -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Us</span>
+                <h2>Why Choose <span class="highlight">Us</span>?</h2>
+                <p>With 10 years of experience, a skilled team and modern technology, we provide the best solutions for your business.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="About Us">
+                    <div class="experience-badge">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>We Are Your Digital Partner</h3>
+                    <p>TechHub is a professional digital agency serving Bangladesh and internationally since 2014. Our goal is to make every business successful in the digital world.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Experienced & skilled developer team</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
+                        <li><i class="fas fa-check-circle"></i> Best service at affordable price</li>
+                        <li><i class="fas fa-check-circle"></i> On-time project delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Lifetime free support</li>
+                        <li><i class="fas fa-check-circle"></i> 100% satisfaction guarantee</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
 
-  <script src="js/products.js"></script>
-  <script src="js/app.js"></script>
+            <!-- Feature Boxes -->
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>We complete projects on time</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safe & Reliable</h4>
+                    <p>Your data is fully protected</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Ready to help anytime</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-award"></i>
+                    <h4>Premium Quality</h4>
+                    <p>We ensure the best quality service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Services Section ===== -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2>What We <span class="highlight">Provide</span></h2>
+                <p>Complete digital solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>We build modern and responsive websites using React, Next.js, Laravel and WordPress.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile app development for Android and iOS platforms.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Complete visual identity design including logo, branding, posters and banners.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Complete digital marketing services including SEO, social media marketing and Google Ads.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Complete e-commerce website solution with payment gateway integration.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>SEO Optimization</h3>
+                    <p>Complete service to bring your website to the first page of Google.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Counter Section ===== -->
+    <section class="counters">
+        <div class="container counters-grid">
+            <div class="counter-box">
+                <i class="fas fa-project-diagram"></i>
+                <h3 class="counter" data-target="500">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-users"></i>
+                <h3 class="counter" data-target="300">0</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-user-tie"></i>
+                <h3 class="counter" data-target="25">0</h3>
+                <p>Team Members</p>
+            </div>
+            <div class="counter-box">
+                <i class="fas fa-trophy"></i>
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Awards Won</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Portfolio Section ===== -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2>Recent <span class="highlight">Projects</span></h2>
+                <p>Some of our notable completed projects</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Website</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h4>E-commerce Website</h4>
+                        <p>Web Development</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h4>Food Delivery App</h4>
+                        <p>Mobile App</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h4>Brand Identity</h4>
+                        <p>Graphic Design</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h4>Corporate Website</h4>
+                        <p>Web Development</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500" alt="Project 5">
+                    <div class="portfolio-overlay">
+                        <h4>Fitness Tracker</h4>
+                        <p>Mobile App</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500" alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h4>Marketing Campaign</h4>
+                        <p>Graphic Design</p>
+                        <a href="#"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Team Section ===== -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Team</span>
+                <h2>Skilled <span class="highlight">Team Members</span></h2>
+                <p>Who work to make your project successful</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Member 1">
+                    <div class="team-info">
+                        <h4>Rahul Ahmed</h4>
+                        <p>CEO & Founder</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Member 2">
+                    <div class="team-info">
+                        <h4>Sadia Islam</h4>
+                        <p>Head of Design</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400" alt="Member 3">
+                    <div class="team-info">
+                        <h4>Karim Hossain</h4>
+                        <p>Lead Developer</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400" alt="Member 4">
+                    <div class="team-info">
+                        <h4>Nusrat Jahan</h4>
+                        <p>Marketing Manager</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Testimonials Section ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Client Reviews</span>
+                <h2>What Our Clients <span class="highlight">Say</span></h2>
+            </div>
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial-card active">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"TechHub's team built our e-commerce website. Their quality of work and punctuality is outstanding. We are very satisfied."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Client 1">
+                        <div>
+                            <h4>Abir Hasan</h4>
+                            <p>CEO, ShopBD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"TechHub built our food delivery app. The app is very user-friendly and fast. Thanks to TechHub!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Client 2">
+                        <div>
+                            <h4>Farzana Akter</h4>
+                            <p>Founder, FoodExpress</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"TechHub is the best for graphic design. Their logos and branding have helped our business grow a lot."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Client 3">
+                        <div>
+                            <h4>Rakib Ahmed</h4>
+                            <p>MD, Creative Studio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots" id="sliderDots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Pricing Section ===== -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing Plans</span>
+                <h2>The Best <span class="highlight">Package</span> For You</h2>
+                <p>Choose a package according to your needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$99<span>/project</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 Page Website</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Basic SEO</li>
+                        <li><i class="fas fa-check"></i> Contact Form</li>
+                        <li><i class="fas fa-times disabled"></i> Logo Design</li>
+                        <li><i class="fas fa-times disabled"></i> 24/7 Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-dark">Get Package</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Standard</h3>
+                    <div class="price">$299<span>/project</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 10 Page Website</li>
+                        <li><i class="fas fa-check"></i> Custom Design</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check"></i> Logo Design</li>
+                        <li><i class="fas fa-check"></i> Social Media Setup</li>
+                        <li><i class="fas fa-times disabled"></i> 24/7 Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Package</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$599<span>/project</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                        <li><i class="fas fa-check"></i> Premium Design</li>
+                        <li><i class="fas fa-check"></i> Complete SEO</li>
+                        <li><i class="fas fa-check"></i> Branding Solution</li>
+                        <li><i class="fas fa-check"></i> 1 Year Free Support</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-dark">Get Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Blog Section ===== -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Blog</span>
+                <h2>Latest <span class="highlight">Articles</span></h2>
+                <p>Latest news and tips from the digital world</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500" alt="Blog 1">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 15, 2024</span>
+                            <span><i class="fas fa-user"></i> Rahul Ahmed</span>
+                        </div>
+                        <h3>Web Development Trends in 2024</h3>
+                        <p>What new trends are coming to web development in 2024 and how they can benefit your business...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500" alt="Blog 2">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 10, 2024</span>
+                            <span><i class="fas fa-user"></i> Sadia Islam</span>
+                        </div>
+                        <h3>10 Important SEO Tips</h3>
+                        <p>Follow these 10 SEO tips to bring your website to the first page of Google...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500" alt="Blog 3">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 5, 2024</span>
+                            <span><i class="fas fa-user"></i> Karim Hossain</span>
+                        </div>
+                        <h3>React vs Vue: Which to Learn?</h3>
+                        <p>Comparison between React and Vue and which one is suitable for your project...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2>Frequently <span class="highlight">Asked Questions</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long does it take to build a website?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Usually it takes 7-15 days to build a standard website. For complex projects, it can take up to 30 days.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I make payments?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We take 50% advance and 50% after project delivery. Payments can be made through bKash, Nagad, bank transfer and various other methods.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I get support after the project?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, every package includes free support from 3 months to 1 year. After that, we provide support at affordable rates.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you do custom design?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We create completely custom designs that match your brand and are unique.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is the refund policy?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Full refund if cancelled before project start. If work has started, adjustment is made according to progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta">
+        <div class="container cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today and get a free consultation</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Free Consultation</a>
+                <a href="tel:+8801712345678" class="btn btn-outline-light"><i class="fas fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Get in <span class="highlight">Touch</span> With Us</h2>
+                <p>Write to us for any question or project</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Banani, Dhaka-1213, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+880 1712345678</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@techhub.com</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Sat - Thu: 9AM - 8PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name *" required>
+                        <input type="email" placeholder="Your Email *" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone Number">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <textarea placeholder="Write Your Message *" rows="6" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Newsletter ===== -->
+    <section class="newsletter">
+        <div class="container newsletter-content">
+            <div>
+                <h3>Subscribe to Newsletter</h3>
+                <p>Subscribe to get the latest updates and offers first</p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="footer-logo"><i class="fas fa-code"></i> Tech<span>Hub</span></a>
+                <p>We are a professional digital agency providing the best services since 2014.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Banani, Dhaka</p>
+                <p><i class="fas fa-phone"></i> +880 1712345678</p>
+                <p><i class="fas fa-envelope"></i> info@techhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 TechHub. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
-</html>
+                                          </html>

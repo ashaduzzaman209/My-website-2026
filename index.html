@@ -74,21 +74,21 @@
   <!-- TOP NAVBAR -->
   <nav class="navbar">
     <div class="nav-left">
-      <h2 class="nav-logo">SocialBook</h2>
+      <h2 class="nav-logo" onclick="goHome()">SocialBook</h2>
       <div class="search-box">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search friends..." id="searchInput">
+        <input type="text" placeholder="Search SocialBook..." id="searchInput">
       </div>
     </div>
     <div class="nav-center">
-      <button class="nav-icon active" onclick="switchTab(this,'home')" title="Home"><i class="fas fa-home"></i></button>
-      <button class="nav-icon" onclick="switchTab(this,'friends')" title="Friends"><i class="fas fa-user-friends"></i></button>
-      <button class="nav-icon" onclick="switchTab(this,'video')" title="Video"><i class="fas fa-video"></i></button>
-      <button class="nav-icon" onclick="switchTab(this,'market')" title="Marketplace"><i class="fas fa-store"></i></button>
-      <button class="nav-icon" onclick="switchTab(this,'game')" title="Gaming"><i class="fas fa-gamepad"></i></button>
+      <button class="nav-icon active" data-tab="home" onclick="switchTab(this,'home')" title="Home"><i class="fas fa-home"></i></button>
+      <button class="nav-icon" data-tab="friends" onclick="switchTab(this,'friends')" title="Friends"><i class="fas fa-user-friends"></i></button>
+      <button class="nav-icon" data-tab="video" onclick="switchTab(this,'video')" title="Video"><i class="fas fa-video"></i></button>
+      <button class="nav-icon" data-tab="market" onclick="switchTab(this,'market')" title="Marketplace"><i class="fas fa-store"></i></button>
+      <button class="nav-icon" data-tab="game" onclick="switchTab(this,'game')" title="Gaming"><i class="fas fa-gamepad"></i></button>
     </div>
     <div class="nav-right">
-      <button class="nav-icon round" title="Messenger" onclick="toast('💬 Messenger coming soon!')">
+      <button class="nav-icon round" title="Messenger" onclick="toast('Messenger coming soon!')">
         <i class="fas fa-comment-dots"></i>
         <span class="badge">3</span>
       </button>
@@ -97,20 +97,21 @@
         <span class="badge">5</span>
       </button>
       <div class="profile-menu" onclick="toggleProfileMenu(event)">
-        <img id="navAvatar" src="https://i.pravatar.cc/40?img=12" alt="profile">
+        <img id="navAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>" alt="profile">
       </div>
 
       <!-- PROFILE DROPDOWN -->
       <div id="profileDropdown" class="profile-dropdown hidden" onclick="event.stopPropagation()">
-        <div class="dropdown-header" onclick="showProfile()">
-          <img id="dropdownAvatar" src="https://i.pravatar.cc/40?img=12">
+        <div class="dropdown-header" onclick="openProfilePage()">
+          <img id="dropdownAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
           <span id="dropdownName">User</span>
         </div>
         <hr>
+        <div class="dropdown-item" onclick="openProfilePage()"><i class="fas fa-user-circle"></i> View Profile</div>
+        <div class="dropdown-item" onclick="openSettings()"><i class="fas fa-cog"></i> Settings & Privacy</div>
         <div class="dropdown-item" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Dark Mode</div>
-        <div class="dropdown-item" onclick="toast('⚙️ Settings')"><i class="fas fa-cog"></i> Settings</div>
-        <div class="dropdown-item" onclick="toast('❓ Help Center')"><i class="fas fa-question-circle"></i> Help</div>
-        <div class="dropdown-item" onclick="toast('📢 Report')"><i class="fas fa-flag"></i> Report</div>
+        <div class="dropdown-item" onclick="openHelp()"><i class="fas fa-question-circle"></i> Help & Support</div>
+        <div class="dropdown-item" onclick="toast('Report submitted')"><i class="fas fa-flag"></i> Report a Problem</div>
         <hr>
         <div class="dropdown-item logout" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Log Out</div>
       </div>
@@ -155,32 +156,32 @@
 
     <!-- LEFT SIDEBAR -->
     <aside class="left-sidebar">
-      <div class="sidebar-item" onclick="showProfile()">
-        <img id="sidebarAvatar" src="https://i.pravatar.cc/40?img=12">
+      <div class="sidebar-item" onclick="openProfilePage()">
+        <img id="sidebarAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
         <span id="sidebarName">User</span>
       </div>
-      <div class="sidebar-item" onclick="toast('👥 Friends List')"><i class="fas fa-user-friends" style="color:#1877f2"></i><span>Friends</span></div>
-      <div class="sidebar-item" onclick="toast('👨‍👩‍👧 Groups')"><i class="fas fa-users" style="color:#1877f2"></i><span>Groups</span></div>
-      <div class="sidebar-item" onclick="toast('🛒 Marketplace')"><i class="fas fa-store" style="color:#1877f2"></i><span>Marketplace</span></div>
-      <div class="sidebar-item" onclick="toast('📺 Video')"><i class="fas fa-tv" style="color:#1877f2"></i><span>Video</span></div>
+      <div class="sidebar-item" onclick="toast('Friends List')"><i class="fas fa-user-friends" style="color:#1877f2"></i><span>Friends</span></div>
+      <div class="sidebar-item" onclick="toast('Groups')"><i class="fas fa-users" style="color:#1877f2"></i><span>Groups</span></div>
+      <div class="sidebar-item" onclick="toast('Marketplace')"><i class="fas fa-store" style="color:#1877f2"></i><span>Marketplace</span></div>
+      <div class="sidebar-item" onclick="toast('Video')"><i class="fas fa-tv" style="color:#1877f2"></i><span>Video</span></div>
       <div class="sidebar-item" onclick="showSaved()"><i class="fas fa-bookmark" style="color:#1877f2"></i><span>Saved</span></div>
-      <div class="sidebar-item" onclick="toast('⏰ Memories')"><i class="fas fa-clock" style="color:#1877f2"></i><span>Memories</span></div>
+      <div class="sidebar-item" onclick="toast('Memories')"><i class="fas fa-clock" style="color:#1877f2"></i><span>Memories</span></div>
       <hr>
       <h4 class="sidebar-heading">Your Shortcuts</h4>
-      <div class="sidebar-item"><i class="fas fa-code" style="color:#e91e63"></i><span>Developer Group</span></div>
-      <div class="sidebar-item"><i class="fas fa-camera" style="color:#9c27b0"></i><span>Photography</span></div>
-      <div class="sidebar-item"><i class="fas fa-music" style="color:#f44336"></i><span>Music Lovers</span></div>
-      <div class="sidebar-item"><i class="fas fa-futbol" style="color:#4caf50"></i><span>Sports</span></div>
+      <div class="sidebar-item" onclick="toast('Developer Group')"><i class="fas fa-code" style="color:#e91e63"></i><span>Developer Group</span></div>
+      <div class="sidebar-item" onclick="toast('Photography')"><i class="fas fa-camera" style="color:#9c27b0"></i><span>Photography</span></div>
+      <div class="sidebar-item" onclick="toast('Music Lovers')"><i class="fas fa-music" style="color:#f44336"></i><span>Music Lovers</span></div>
+      <div class="sidebar-item" onclick="toast('Sports')"><i class="fas fa-futbol" style="color:#4caf50"></i><span>Sports</span></div>
     </aside>
 
     <!-- CENTER FEED -->
     <main class="feed">
       
       <!-- STORIES -->
-      <div class="stories-container">
+      <div class="stories-container" id="storiesContainer">
         <div class="story-card create-story" onclick="createStory()">
           <div class="story-img">
-            <img id="storyAvatar" src="https://i.pravatar.cc/150?img=12">
+            <img id="storyAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
           </div>
           <div class="story-create-btn">+</div>
           <p>Create Story</p>
@@ -190,7 +191,7 @@
       <!-- CREATE POST -->
       <div class="create-post">
         <div class="post-top">
-          <img id="postAvatar" src="https://i.pravatar.cc/40?img=12">
+          <img id="postAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
           <input type="text" id="postInput" placeholder="What's on your mind?" autocomplete="off">
         </div>
         <div id="imagePreviewBox" class="image-preview-box hidden">
@@ -199,8 +200,8 @@
         </div>
         <div class="post-options">
           <button onclick="openImagePicker()"><i class="fas fa-image" style="color:#45bd62;"></i> Photo</button>
-          <button onclick="toast('🎥 Video upload')"><i class="fas fa-video" style="color:#f3425f;"></i> Video</button>
-          <button onclick="toast('😊 Feeling')"><i class="fas fa-smile" style="color:#f7b928;"></i> Feeling</button>
+          <button onclick="toast('Video upload coming soon')"><i class="fas fa-video" style="color:#f3425f;"></i> Video</button>
+          <button onclick="toast('Feeling feature coming soon')"><i class="fas fa-smile" style="color:#f7b928;"></i> Feeling</button>
           <input type="file" id="imageUpload" accept="image/*" hidden>
         </div>
         <button class="btn-post" onclick="createPost()">Post</button>
@@ -223,7 +224,7 @@
         <div><p>Free Online Courses</p><span>learn.com</span></div>
       </div>
       <hr>
-      <h4 class="sidebar-heading">Birthdays 🎂</h4>
+      <h4 class="sidebar-heading">Birthdays</h4>
       <div class="birthday-item">
         <img src="https://i.pravatar.cc/40?img=8">
         <div>
@@ -233,27 +234,27 @@
       </div>
       <hr>
       <h4 class="sidebar-heading">Contacts</h4>
-      <div class="contact-item" onclick="toast('💬 Chat opened')">
+      <div class="contact-item" onclick="toast('Chat opened')">
         <div class="avatar-wrap">
           <img src="https://i.pravatar.cc/40?img=5">
           <span class="online-dot"></span>
         </div>
         <span>Rahul Ahmed</span>
       </div>
-      <div class="contact-item" onclick="toast('💬 Chat opened')">
+      <div class="contact-item" onclick="toast('Chat opened')">
         <div class="avatar-wrap">
           <img src="https://i.pravatar.cc/40?img=6">
           <span class="online-dot"></span>
         </div>
         <span>Sadia Khan</span>
       </div>
-      <div class="contact-item" onclick="toast('💬 Chat opened')">
+      <div class="contact-item" onclick="toast('Chat opened')">
         <div class="avatar-wrap">
           <img src="https://i.pravatar.cc/40?img=7">
         </div>
         <span>Karim Hossain</span>
       </div>
-      <div class="contact-item" onclick="toast('💬 Chat opened')">
+      <div class="contact-item" onclick="toast('Chat opened')">
         <div class="avatar-wrap">
           <img src="https://i.pravatar.cc/40?img=9">
           <span class="online-dot"></span>
@@ -265,35 +266,370 @@
   </div>
 </div>
 
+<!-- ========== PROFILE PAGE ========== -->
+<div id="profilePage" class="profile-page hidden">
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2 class="nav-logo" onclick="goHome()">SocialBook</h2>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search SocialBook...">
+      </div>
+    </div>
+    <div class="nav-center">
+      <button class="nav-icon" onclick="goHome()" title="Home"><i class="fas fa-home"></i></button>
+    </div>
+    <div class="nav-right">
+      <div class="profile-menu" onclick="toggleProfileMenu(event)">
+        <img id="navAvatar2" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile-page-container">
+    <!-- COVER + AVATAR -->
+    <div class="profile-header-card">
+      <div class="profile-cover-photo" id="profileCoverPhoto">
+        <img id="coverPhotoImg" src="https://picsum.photos/1200/400?random=100">
+        <button class="cover-edit-btn" onclick="document.getElementById('coverUpload').click()">
+          <i class="fas fa-camera"></i> Edit Cover Photo
+        </button>
+        <input type="file" id="coverUpload" accept="image/*" hidden>
+      </div>
+      <div class="profile-main-info">
+        <div class="profile-avatar-large">
+          <img id="profilePageAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
+          <button class="avatar-edit-btn" onclick="document.getElementById('avatarUpload').click()">
+            <i class="fas fa-camera"></i>
+          </button>
+          <input type="file" id="avatarUpload" accept="image/*" hidden>
+        </div>
+        <div class="profile-text">
+          <h1 id="profilePageName">User</h1>
+          <p id="profilePageBio" class="bio-text">No bio yet</p>
+          <p class="profile-friends-count"><strong>245</strong> friends</p>
+        </div>
+        <div class="profile-actions">
+          <button class="btn-primary" onclick="openEditProfile()"><i class="fas fa-pen"></i> Edit Profile</button>
+        </div>
+      </div>
+      <div class="profile-tabs">
+        <button class="profile-tab active" onclick="switchProfileTab(this,'posts')">Posts</button>
+        <button class="profile-tab" onclick="switchProfileTab(this,'about')">About</button>
+        <button class="profile-tab" onclick="switchProfileTab(this,'friends')">Friends</button>
+        <button class="profile-tab" onclick="switchProfileTab(this,'photos')">Photos</button>
+      </div>
+    </div>
+
+    <!-- PROFILE CONTENT -->
+    <div class="profile-content">
+      <div class="profile-left">
+        <div class="profile-intro-card">
+          <h3>Intro</h3>
+          <p id="introBio">No bio yet</p>
+          <div class="intro-item"><i class="fas fa-briefcase"></i> Works at <strong>Company</strong></div>
+          <div class="intro-item"><i class="fas fa-graduation-cap"></i> Studied at <strong>University</strong></div>
+          <div class="intro-item"><i class="fas fa-map-marker-alt"></i> Lives in <strong>Dhaka</strong></div>
+          <div class="intro-item"><i class="fas fa-heart"></i> Single</div>
+          <button class="btn-secondary full-width" onclick="openEditProfile()">Edit Details</button>
+        </div>
+        <div class="profile-photos-card">
+          <h3>Photos</h3>
+          <div class="photos-grid">
+            <img src="https://picsum.photos/200/200?random=41">
+            <img src="https://picsum.photos/200/200?random=42">
+            <img src="https://picsum.photos/200/200?random=43">
+            <img src="https://picsum.photos/200/200?random=44">
+            <img src="https://picsum.photos/200/200?random=45">
+            <img src="https://picsum.photos/200/200?random=46">
+          </div>
+        </div>
+      </div>
+      <div class="profile-right">
+        <div class="profile-posts-create">
+          <img id="profilePostAvatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
+          <input type="text" id="profilePostInput" placeholder="What's on your mind?">
+          <button onclick="createProfilePost()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div id="profilePostsContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SETTINGS PAGE ========== -->
+<div id="settingsPage" class="settings-page hidden">
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2 class="nav-logo" onclick="goHome()">SocialBook</h2>
+    </div>
+    <div class="nav-center"></div>
+    <div class="nav-right">
+      <div class="profile-menu" onclick="toggleProfileMenu(event)">
+        <img id="navAvatar3" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
+      </div>
+    </div>
+  </nav>
+
+  <div class="settings-container">
+    <div class="settings-sidebar">
+      <h2>Settings</h2>
+      <div class="settings-menu-item active" onclick="switchSettingsTab(this,'general')">
+        <i class="fas fa-user-cog"></i> General
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'account')">
+        <i class="fas fa-shield-alt"></i> Account & Security
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'privacy')">
+        <i class="fas fa-lock"></i> Privacy
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'notifications')">
+        <i class="fas fa-bell"></i> Notifications
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'appearance')">
+        <i class="fas fa-palette"></i> Appearance
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'language')">
+        <i class="fas fa-language"></i> Language
+      </div>
+      <div class="settings-menu-item" onclick="switchSettingsTab(this,'help')">
+        <i class="fas fa-question-circle"></i> Help
+      </div>
+    </div>
+
+    <div class="settings-content" id="settingsContent">
+      <!-- General -->
+      <div class="settings-panel" id="panel-general">
+        <h2>General Settings</h2>
+        <p class="settings-desc">Manage your basic account information</p>
+        
+        <div class="setting-group">
+          <label>Full Name</label>
+          <input type="text" id="settingName">
+        </div>
+        <div class="setting-group">
+          <label>Email Address</label>
+          <input type="email" id="settingEmail">
+        </div>
+        <div class="setting-group">
+          <label>Bio</label>
+          <textarea id="settingBio" rows="3" placeholder="Tell us about yourself..."></textarea>
+        </div>
+        <div class="setting-group">
+          <label>Location</label>
+          <input type="text" id="settingLocation" placeholder="City, Country">
+        </div>
+        <button class="btn-primary" onclick="saveGeneralSettings()">Save Changes</button>
+      </div>
+
+      <!-- Account -->
+      <div class="settings-panel hidden" id="panel-account">
+        <h2>Account & Security</h2>
+        <p class="settings-desc">Manage your password and security settings</p>
+        
+        <div class="setting-group">
+          <label>Current Password</label>
+          <input type="password" placeholder="Enter current password">
+        </div>
+        <div class="setting-group">
+          <label>New Password</label>
+          <input type="password" id="newPassword" placeholder="Enter new password">
+        </div>
+        <div class="setting-group">
+          <label>Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm new password">
+        </div>
+        <button class="btn-primary" onclick="changePassword()">Change Password</button>
+        
+        <hr class="settings-divider">
+        <h3>Two-Factor Authentication</h3>
+        <div class="toggle-setting">
+          <div>
+            <strong>Enable 2FA</strong>
+            <p>Add an extra layer of security to your account</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="twofaToggle" onchange="toast('2FA ' + (this.checked ? 'enabled' : 'disabled'))">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Privacy -->
+      <div class="settings-panel hidden" id="panel-privacy">
+        <h2>Privacy Settings</h2>
+        <p class="settings-desc">Control who can see your content</p>
+        
+        <div class="setting-group">
+          <label>Who can see my future posts?</label>
+          <select id="privacyPosts">
+            <option>Public</option>
+            <option>Friends</option>
+            <option>Only Me</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label>Who can send me friend requests?</label>
+          <select id="privacyRequests">
+            <option>Everyone</option>
+            <option>Friends of Friends</option>
+            <option>Nobody</option>
+          </select>
+        </div>
+        <div class="toggle-setting">
+          <div>
+            <strong>Show my online status</strong>
+            <p>Let others see when you're active</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked onchange="toast('Online status ' + (this.checked ? 'visible' : 'hidden'))">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <button class="btn-primary" onclick="savePrivacySettings()">Save Privacy Settings</button>
+      </div>
+
+      <!-- Notifications -->
+      <div class="settings-panel hidden" id="panel-notifications">
+        <h2>Notification Settings</h2>
+        <p class="settings-desc">Choose what you want to be notified about</p>
+        
+        <div class="toggle-setting">
+          <div><strong>Likes</strong><p>Get notified when someone likes your post</p></div>
+          <label class="switch"><input type="checkbox" checked onchange="toast('Like notifications ' + (this.checked ? 'on' : 'off'))"><span class="slider"></span></label>
+        </div>
+        <div class="toggle-setting">
+          <div><strong>Comments</strong><p>Get notified when someone comments</p></div>
+          <label class="switch"><input type="checkbox" checked onchange="toast('Comment notifications ' + (this.checked ? 'on' : 'off'))"><span class="slider"></span></label>
+        </div>
+        <div class="toggle-setting">
+          <div><strong>Friend Requests</strong><p>Get notified for friend requests</p></div>
+          <label class="switch"><input type="checkbox" checked onchange="toast('Friend request notifications ' + (this.checked ? 'on' : 'off'))"><span class="slider"></span></label>
+        </div>
+        <div class="toggle-setting">
+          <div><strong>Messages</strong><p>Get notified for new messages</p></div>
+          <label class="switch"><input type="checkbox" checked onchange="toast('Message notifications ' + (this.checked ? 'on' : 'off'))"><span class="slider"></span></label>
+        </div>
+        <div class="toggle-setting">
+          <div><strong>Email Notifications</strong><p>Receive notifications via email</p></div>
+          <label class="switch"><input type="checkbox" onchange="toast('Email notifications ' + (this.checked ? 'on' : 'off'))"><span class="slider"></span></label>
+        </div>
+      </div>
+
+      <!-- Appearance -->
+      <div class="settings-panel hidden" id="panel-appearance">
+        <h2>Appearance</h2>
+        <p class="settings-desc">Customize how SocialBook looks</p>
+        
+        <div class="theme-selector">
+          <div class="theme-option" id="themeLight" onclick="setTheme('light')">
+            <div class="theme-preview light-preview"></div>
+            <span>Light</span>
+          </div>
+          <div class="theme-option" id="themeDark" onclick="setTheme('dark')">
+            <div class="theme-preview dark-preview"></div>
+            <span>Dark</span>
+          </div>
+          <div class="theme-option" id="themeAuto" onclick="setTheme('auto')">
+            <div class="theme-preview auto-preview"></div>
+            <span>Auto</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language -->
+      <div class="settings-panel hidden" id="panel-language">
+        <h2>Language</h2>
+        <p class="settings-desc">Choose your preferred language</p>
+        
+        <div class="setting-group">
+          <label>Display Language</label>
+          <select id="languageSelect" onchange="toast('Language changed to ' + this.value)">
+            <option>English (US)</option>
+            <option>English (UK)</option>
+            <option>Español</option>
+            <option>Français</option>
+            <option>Deutsch</option>
+            <option>हिन्दी</option>
+            <option>বাংলা</option>
+            <option>العربية</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Help -->
+      <div class="settings-panel hidden" id="panel-help">
+        <h2>Help & Support</h2>
+        <p class="settings-desc">Get help with SocialBook</p>
+        
+        <div class="help-item" onclick="toast('Opening Help Center...')">
+          <i class="fas fa-book"></i>
+          <div><strong>Help Center</strong><p>Browse help articles and FAQs</p></div>
+        </div>
+        <div class="help-item" onclick="toast('Opening Report form...')">
+          <i class="fas fa-flag"></i>
+          <div><strong>Report a Problem</strong><p>Report bugs or issues</p></div>
+        </div>
+        <div class="help-item" onclick="toast('Opening Terms...')">
+          <i class="fas fa-file-contract"></i>
+          <div><strong>Terms & Policies</strong><p>Read our terms of service</p></div>
+        </div>
+        <div class="help-item" onclick="toast('Opening Contact...')">
+          <i class="fas fa-envelope"></i>
+          <div><strong>Contact Support</strong><p>Get in touch with our team</p></div>
+        </div>
+        <div class="help-item" onclick="toast('Opening About...')">
+          <i class="fas fa-info-circle"></i>
+          <div><strong>About SocialBook</strong><p>Version 1.0.0</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EDIT PROFILE MODAL ========== -->
+<div id="editProfileModal" class="modal hidden" onclick="closeEditProfile()">
+  <div class="edit-profile-content" onclick="event.stopPropagation()">
+    <div class="edit-header">
+      <h2>Edit Profile</h2>
+      <button onclick="closeEditProfile()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="edit-body">
+      <div class="edit-avatar-section">
+        <img id="editAvatarPreview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%23ddd' width='40' height='40'/><circle cx='20' cy='15' r='7' fill='%23999'/><path d='M6 40c0-8 6-14 14-14s14 6 14 14z' fill='%23999'/></svg>">
+        <button class="btn-secondary" onclick="document.getElementById('editAvatarUpload').click()">
+          <i class="fas fa-camera"></i> Change Photo
+        </button>
+        <input type="file" id="editAvatarUpload" accept="image/*" hidden>
+      </div>
+      <div class="edit-field">
+        <label>Full Name</label>
+        <input type="text" id="editName" placeholder="Enter your name">
+      </div>
+      <div class="edit-field">
+        <label>Bio</label>
+        <textarea id="editBio" rows="3" placeholder="Tell us about yourself"></textarea>
+      </div>
+      <div class="edit-field">
+        <label>Location</label>
+        <input type="text" id="editLocation" placeholder="City, Country">
+      </div>
+      <div class="edit-field">
+        <label>Occupation</label>
+        <input type="text" id="editOccupation" placeholder="Your job">
+      </div>
+    </div>
+    <div class="edit-footer">
+      <button class="btn-secondary" onclick="closeEditProfile()">Cancel</button>
+      <button class="btn-primary" onclick="saveProfileChanges()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
 <!-- IMAGE MODAL -->
 <div id="imageModal" class="modal hidden" onclick="closeModal()">
   <span class="close-modal">&times;</span>
   <img class="modal-content" id="modalImage" onclick="event.stopPropagation()">
-</div>
-
-<!-- PROFILE MODAL -->
-<div id="profileModal" class="modal hidden" onclick="closeProfileModal()">
-  <div class="profile-modal-content" onclick="event.stopPropagation()">
-    <div class="profile-cover">
-      <img src="https://picsum.photos/800/300?random=30">
-    </div>
-    <div class="profile-avatar-wrap">
-      <img id="profileAvatar" src="https://i.pravatar.cc/150?img=12">
-    </div>
-    <div class="profile-info">
-      <h2 id="profileName">User</h2>
-      <p id="profileEmail">email@example.com</p>
-      <div class="profile-stats">
-        <div><strong>245</strong><span>Friends</span></div>
-        <div><strong>56</strong><span>Posts</span></div>
-        <div><strong>1.2K</strong><span>Likes</span></div>
-      </div>
-      <div class="profile-buttons">
-        <button class="btn-primary" onclick="toast('✏️ Edit Profile')">Edit Profile</button>
-        <button class="btn-secondary" onclick="closeProfileModal()">Close</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- TOAST CONTAINER -->
@@ -301,4 +637,4 @@
 
 <script src="script.js"></script>
 </body>
-          </html>
+  </html>

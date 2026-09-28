@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SocialBook - তোমার সোশ্যাল নেটওয়ার্ক</title>
+  <title>SocialBook</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,16 +14,16 @@
   <div class="auth-container">
     <div class="auth-left">
       <h1 class="brand-logo">SocialBook</h1>
-      <p class="brand-tagline">বন্ধুদের সাথে সংযুক্ত থাকুন এবং জীবন শেয়ার করুন।</p>
+      <p class="brand-tagline">Connect with friends and the world around you.</p>
     </div>
     <div class="auth-right">
       <div class="auth-card">
-        <input type="text" id="loginEmail" placeholder="ইমেইল বা ফোন নম্বর">
-        <input type="password" id="loginPassword" placeholder="পাসওয়ার্ড">
-        <button class="btn-primary" onclick="loginUser()">লগইন</button>
-        <a href="#" class="forgot-link">পাসওয়ার্ড ভুলে গেছেন?</a>
+        <input type="text" id="loginEmail" placeholder="Email or phone number" value="demo@socialbook.com">
+        <input type="password" id="loginPassword" placeholder="Password" value="123456">
+        <button class="btn-primary" onclick="loginUser()">Log In</button>
+        <a href="#" class="forgot-link" onclick="alert('Password reset is not available in this demo.')">Forgot password?</a>
         <hr>
-        <button class="btn-success" onclick="showSignup()">নতুন অ্যাকাউন্ট তৈরি করুন</button>
+        <button class="btn-success" onclick="showSignup()">Create New Account</button>
       </div>
     </div>
   </div>
@@ -34,36 +34,36 @@
   <div class="signup-container">
     <div class="signup-header">
       <h1 class="brand-logo">SocialBook</h1>
-      <p>দ্রুত এবং সহজে অ্যাকাউন্ট তৈরি করুন।</p>
+      <p>Create an account quickly and easily.</p>
     </div>
     <div class="signup-card">
       <div class="input-row">
-        <input type="text" id="signupFirstName" placeholder="প্রথম নাম">
-        <input type="text" id="signupLastName" placeholder="শেষ নাম">
+        <input type="text" id="signupFirstName" placeholder="First name">
+        <input type="text" id="signupLastName" placeholder="Last name">
       </div>
-      <input type="text" id="signupEmail" placeholder="মোবাইল নম্বর বা ইমেইল">
-      <input type="password" id="signupPassword" placeholder="নতুন পাসওয়ার্ড">
+      <input type="text" id="signupEmail" placeholder="Mobile number or email">
+      <input type="password" id="signupPassword" placeholder="New password">
       <div class="input-row">
-        <select id="signupDay"><option>দিন</option></select>
+        <select id="signupDay"><option>Day</option></select>
         <select id="signupMonth">
-          <option>মাস</option>
-          <option>জানুয়ারি</option><option>ফেব্রুয়ারি</option>
-          <option>মার্চ</option><option>এপ্রিল</option>
-          <option>মে</option><option>জুন</option>
-          <option>জুলাই</option><option>আগস্ট</option>
-          <option>সেপ্টেম্বর</option><option>অক্টোবর</option>
-          <option>নভেম্বর</option><option>ডিসেম্বর</option>
+          <option>Month</option>
+          <option>January</option><option>February</option>
+          <option>March</option><option>April</option>
+          <option>May</option><option>June</option>
+          <option>July</option><option>August</option>
+          <option>September</option><option>October</option>
+          <option>November</option><option>December</option>
         </select>
-        <select id="signupYear"><option>বছর</option></select>
+        <select id="signupYear"><option>Year</option></select>
       </div>
       <div class="gender-row">
-        <label><input type="radio" name="gender" value="female"> মহিলা</label>
-        <label><input type="radio" name="gender" value="male"> পুরুষ</label>
-        <label><input type="radio" name="gender" value="other"> অন্যান্য</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
       </div>
-      <p class="terms-text">সাইন আপ ক্লিক করে আপনি আমাদের শর্তাবলী মেনে নিচ্ছেন।</p>
-      <button class="btn-success" onclick="signupUser()">সাইন আপ</button>
-      <button class="btn-link" onclick="showLogin()">ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন</button>
+      <p class="terms-text">By clicking Sign Up, you agree to our Terms and Conditions.</p>
+      <button class="btn-success" onclick="signupUser()">Sign Up</button>
+      <button class="btn-link" onclick="showLogin()">Already have an account? Log in</button>
     </div>
   </div>
 </div>
@@ -77,31 +77,75 @@
       <h2 class="nav-logo">SocialBook</h2>
       <div class="search-box">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="বন্ধু খুঁজুন..." id="searchInput">
+        <input type="text" placeholder="Search friends..." id="searchInput">
       </div>
     </div>
     <div class="nav-center">
-      <button class="nav-icon active" title="হোম"><i class="fas fa-home"></i></button>
-      <button class="nav-icon" title="বন্ধু"><i class="fas fa-user-friends"></i></button>
-      <button class="nav-icon" title="ভিডিও"><i class="fas fa-video"></i></button>
-      <button class="nav-icon" title="মার্কেটপ্লেস"><i class="fas fa-store"></i></button>
-      <button class="nav-icon" title="গেম"><i class="fas fa-gamepad"></i></button>
+      <button class="nav-icon active" onclick="switchTab(this,'home')" title="Home"><i class="fas fa-home"></i></button>
+      <button class="nav-icon" onclick="switchTab(this,'friends')" title="Friends"><i class="fas fa-user-friends"></i></button>
+      <button class="nav-icon" onclick="switchTab(this,'video')" title="Video"><i class="fas fa-video"></i></button>
+      <button class="nav-icon" onclick="switchTab(this,'market')" title="Marketplace"><i class="fas fa-store"></i></button>
+      <button class="nav-icon" onclick="switchTab(this,'game')" title="Gaming"><i class="fas fa-gamepad"></i></button>
     </div>
     <div class="nav-right">
-      <button class="nav-icon" title="মেসেঞ্জার"><i class="fas fa-comment-dots"></i></button>
-      <button class="nav-icon" title="নোটিফিকেশন"><i class="fas fa-bell"></i></button>
-      <div class="profile-menu" onclick="toggleProfileMenu()">
+      <button class="nav-icon round" title="Messenger" onclick="toast('💬 Messenger coming soon!')">
+        <i class="fas fa-comment-dots"></i>
+        <span class="badge">3</span>
+      </button>
+      <button class="nav-icon round" title="Notifications" onclick="toggleNotification(event)">
+        <i class="fas fa-bell"></i>
+        <span class="badge">5</span>
+      </button>
+      <div class="profile-menu" onclick="toggleProfileMenu(event)">
         <img id="navAvatar" src="https://i.pravatar.cc/40?img=12" alt="profile">
       </div>
-      <div id="profileDropdown" class="profile-dropdown hidden">
+
+      <!-- PROFILE DROPDOWN -->
+      <div id="profileDropdown" class="profile-dropdown hidden" onclick="event.stopPropagation()">
         <div class="dropdown-header" onclick="showProfile()">
           <img id="dropdownAvatar" src="https://i.pravatar.cc/40?img=12">
-          <span id="dropdownName">ব্যবহারকারী</span>
+          <span id="dropdownName">User</span>
         </div>
         <hr>
-        <div class="dropdown-item"><i class="fas fa-cog"></i> সেটিংস</div>
-        <div class="dropdown-item"><i class="fas fa-question-circle"></i> সাহায্য</div>
-        <div class="dropdown-item" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> লগআউট</div>
+        <div class="dropdown-item" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Dark Mode</div>
+        <div class="dropdown-item" onclick="toast('⚙️ Settings')"><i class="fas fa-cog"></i> Settings</div>
+        <div class="dropdown-item" onclick="toast('❓ Help Center')"><i class="fas fa-question-circle"></i> Help</div>
+        <div class="dropdown-item" onclick="toast('📢 Report')"><i class="fas fa-flag"></i> Report</div>
+        <hr>
+        <div class="dropdown-item logout" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Log Out</div>
+      </div>
+
+      <!-- NOTIFICATION DROPDOWN -->
+      <div id="notificationDropdown" class="notification-dropdown hidden" onclick="event.stopPropagation()">
+        <h3>Notifications</h3>
+        <div class="notif-item">
+          <img src="https://i.pravatar.cc/40?img=5">
+          <div>
+            <p><strong>Rahul Ahmed</strong> liked your post</p>
+            <span>2 minutes ago</span>
+          </div>
+        </div>
+        <div class="notif-item">
+          <img src="https://i.pravatar.cc/40?img=6">
+          <div>
+            <p><strong>Sadia Khan</strong> commented on your post</p>
+            <span>1 hour ago</span>
+          </div>
+        </div>
+        <div class="notif-item">
+          <img src="https://i.pravatar.cc/40?img=7">
+          <div>
+            <p><strong>Karim Hossain</strong> sent you a friend request</p>
+            <span>3 hours ago</span>
+          </div>
+        </div>
+        <div class="notif-item">
+          <img src="https://i.pravatar.cc/40?img=9">
+          <div>
+            <p><strong>Nila Rahman</strong> reacted to your story</p>
+            <span>1 day ago</span>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -113,18 +157,20 @@
     <aside class="left-sidebar">
       <div class="sidebar-item" onclick="showProfile()">
         <img id="sidebarAvatar" src="https://i.pravatar.cc/40?img=12">
-        <span id="sidebarName">ব্যবহারকারী</span>
+        <span id="sidebarName">User</span>
       </div>
-      <div class="sidebar-item"><i class="fas fa-user-friends"></i><span>বন্ধু</span></div>
-      <div class="sidebar-item"><i class="fas fa-users"></i><span>গ্রুপ</span></div>
-      <div class="sidebar-item"><i class="fas fa-store"></i><span>মার্কেটপ্লেস</span></div>
-      <div class="sidebar-item"><i class="fas fa-tv"></i><span>ভিডিও</span></div>
-      <div class="sidebar-item"><i class="fas fa-bookmark"></i><span>সেভ করা</span></div>
-      <div class="sidebar-item"><i class="fas fa-clock"></i><span>মেমোরি</span></div>
+      <div class="sidebar-item" onclick="toast('👥 Friends List')"><i class="fas fa-user-friends" style="color:#1877f2"></i><span>Friends</span></div>
+      <div class="sidebar-item" onclick="toast('👨‍👩‍👧 Groups')"><i class="fas fa-users" style="color:#1877f2"></i><span>Groups</span></div>
+      <div class="sidebar-item" onclick="toast('🛒 Marketplace')"><i class="fas fa-store" style="color:#1877f2"></i><span>Marketplace</span></div>
+      <div class="sidebar-item" onclick="toast('📺 Video')"><i class="fas fa-tv" style="color:#1877f2"></i><span>Video</span></div>
+      <div class="sidebar-item" onclick="showSaved()"><i class="fas fa-bookmark" style="color:#1877f2"></i><span>Saved</span></div>
+      <div class="sidebar-item" onclick="toast('⏰ Memories')"><i class="fas fa-clock" style="color:#1877f2"></i><span>Memories</span></div>
       <hr>
-      <h4 class="sidebar-heading">তোমার শর্টকাট</h4>
-      <div class="sidebar-item"><i class="fas fa-code"></i><span>ডেভেলপার গ্রুপ</span></div>
-      <div class="sidebar-item"><i class="fas fa-camera"></i><span>ফটোগ্রাফি</span></div>
+      <h4 class="sidebar-heading">Your Shortcuts</h4>
+      <div class="sidebar-item"><i class="fas fa-code" style="color:#e91e63"></i><span>Developer Group</span></div>
+      <div class="sidebar-item"><i class="fas fa-camera" style="color:#9c27b0"></i><span>Photography</span></div>
+      <div class="sidebar-item"><i class="fas fa-music" style="color:#f44336"></i><span>Music Lovers</span></div>
+      <div class="sidebar-item"><i class="fas fa-futbol" style="color:#4caf50"></i><span>Sports</span></div>
     </aside>
 
     <!-- CENTER FEED -->
@@ -137,27 +183,7 @@
             <img id="storyAvatar" src="https://i.pravatar.cc/150?img=12">
           </div>
           <div class="story-create-btn">+</div>
-          <p>স্টোরি তৈরি করুন</p>
-        </div>
-        <div class="story-card">
-          <img src="https://picsum.photos/150/250?random=1">
-          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=1"></div>
-          <p>রাহুল</p>
-        </div>
-        <div class="story-card">
-          <img src="https://picsum.photos/150/250?random=2">
-          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=2"></div>
-          <p>সাদিয়া</p>
-        </div>
-        <div class="story-card">
-          <img src="https://picsum.photos/150/250?random=3">
-          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=3"></div>
-          <p>করিম</p>
-        </div>
-        <div class="story-card">
-          <img src="https://picsum.photos/150/250?random=4">
-          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=4"></div>
-          <p>নিলা</p>
+          <p>Create Story</p>
         </div>
       </div>
 
@@ -165,75 +191,114 @@
       <div class="create-post">
         <div class="post-top">
           <img id="postAvatar" src="https://i.pravatar.cc/40?img=12">
-          <input type="text" id="postInput" placeholder="কি ভাবছেন, লিখুন...">
+          <input type="text" id="postInput" placeholder="What's on your mind?" autocomplete="off">
+        </div>
+        <div id="imagePreviewBox" class="image-preview-box hidden">
+          <img id="imagePreview">
+          <button class="remove-img" onclick="removeImage()"><i class="fas fa-times"></i></button>
         </div>
         <div class="post-options">
-          <button onclick="openImagePicker()"><i class="fas fa-image" style="color:#45bd62;"></i> ছবি</button>
-          <button><i class="fas fa-video" style="color:#f3425f;"></i> ভিডিও</button>
-          <button><i class="fas fa-smile" style="color:#f7b928;"></i> ফিলিংস</button>
+          <button onclick="openImagePicker()"><i class="fas fa-image" style="color:#45bd62;"></i> Photo</button>
+          <button onclick="toast('🎥 Video upload')"><i class="fas fa-video" style="color:#f3425f;"></i> Video</button>
+          <button onclick="toast('😊 Feeling')"><i class="fas fa-smile" style="color:#f7b928;"></i> Feeling</button>
           <input type="file" id="imageUpload" accept="image/*" hidden>
         </div>
-        <img id="imagePreview" class="image-preview hidden">
-        <button class="btn-post" onclick="createPost()">পোস্ট করুন</button>
+        <button class="btn-post" onclick="createPost()">Post</button>
       </div>
 
-      <!-- POSTS CONTAINER -->
+      <!-- POSTS FEED -->
       <div id="postsContainer"></div>
 
     </main>
 
     <!-- RIGHT SIDEBAR -->
     <aside class="right-sidebar">
-      <h4 class="sidebar-heading">স্পন্সরড</h4>
+      <h4 class="sidebar-heading">Sponsored</h4>
       <div class="sponsor-item">
         <img src="https://picsum.photos/100/100?random=10">
-        <p>নতুন গ্যাজেট কিনুন</p>
+        <div><p>Buy New Gadgets</p><span>shop.com</span></div>
       </div>
       <div class="sponsor-item">
         <img src="https://picsum.photos/100/100?random=11">
-        <p>ফ্রি কোর্স করুন</p>
+        <div><p>Free Online Courses</p><span>learn.com</span></div>
       </div>
       <hr>
-      <h4 class="sidebar-heading">জন্মদিন 🎂</h4>
+      <h4 class="sidebar-heading">Birthdays 🎂</h4>
       <div class="birthday-item">
         <img src="https://i.pravatar.cc/40?img=8">
         <div>
-          <strong>আয়েশা</strong>
-          <p>আজ জন্মদিন</p>
+          <strong>Ayesha</strong>
+          <p>Birthday today</p>
         </div>
       </div>
       <hr>
-      <h4 class="sidebar-heading">বন্ধু</h4>
-      <div class="contact-item">
-        <img src="https://i.pravatar.cc/40?img=5">
-        <span>রাহুল আহমেদ</span>
-        <i class="fas fa-circle online"></i>
+      <h4 class="sidebar-heading">Contacts</h4>
+      <div class="contact-item" onclick="toast('💬 Chat opened')">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/40?img=5">
+          <span class="online-dot"></span>
+        </div>
+        <span>Rahul Ahmed</span>
       </div>
-      <div class="contact-item">
-        <img src="https://i.pravatar.cc/40?img=6">
-        <span>সাদিয়া খান</span>
-        <i class="fas fa-circle online"></i>
+      <div class="contact-item" onclick="toast('💬 Chat opened')">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/40?img=6">
+          <span class="online-dot"></span>
+        </div>
+        <span>Sadia Khan</span>
       </div>
-      <div class="contact-item">
-        <img src="https://i.pravatar.cc/40?img=7">
-        <span>করিম হোসেন</span>
+      <div class="contact-item" onclick="toast('💬 Chat opened')">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/40?img=7">
+        </div>
+        <span>Karim Hossain</span>
       </div>
-      <div class="contact-item">
-        <img src="https://i.pravatar.cc/40?img=9">
-        <span>নিলা রহমান</span>
-        <i class="fas fa-circle online"></i>
+      <div class="contact-item" onclick="toast('💬 Chat opened')">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/40?img=9">
+          <span class="online-dot"></span>
+        </div>
+        <span>Nila Rahman</span>
       </div>
     </aside>
 
   </div>
 </div>
 
-<!-- IMAGE VIEWER MODAL -->
-<div id="imageModal" class="modal hidden">
-  <span class="close-modal" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal hidden" onclick="closeModal()">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage" onclick="event.stopPropagation()">
 </div>
+
+<!-- PROFILE MODAL -->
+<div id="profileModal" class="modal hidden" onclick="closeProfileModal()">
+  <div class="profile-modal-content" onclick="event.stopPropagation()">
+    <div class="profile-cover">
+      <img src="https://picsum.photos/800/300?random=30">
+    </div>
+    <div class="profile-avatar-wrap">
+      <img id="profileAvatar" src="https://i.pravatar.cc/150?img=12">
+    </div>
+    <div class="profile-info">
+      <h2 id="profileName">User</h2>
+      <p id="profileEmail">email@example.com</p>
+      <div class="profile-stats">
+        <div><strong>245</strong><span>Friends</span></div>
+        <div><strong>56</strong><span>Posts</span></div>
+        <div><strong>1.2K</strong><span>Likes</span></div>
+      </div>
+      <div class="profile-buttons">
+        <button class="btn-primary" onclick="toast('✏️ Edit Profile')">Edit Profile</button>
+        <button class="btn-secondary" onclick="closeProfileModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toastContainer" class="toast-container"></div>
 
 <script src="script.js"></script>
 </body>
-</html>
+          </html>

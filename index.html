@@ -1,692 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We provide the best web development, design and digital marketing services">
-    <title>TechHub - Digital Solution Provider</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SocialBook - তোমার সোশ্যাল নেটওয়ার্ক</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- ===== Top Bar ===== -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-info">
-                <span><i class="fas fa-phone"></i> 018........ </span>
-                <span><i class="fas fa-envelope"></i> info@techhubbd.com</span>
-            </div>
-            <div class="top-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
+<!-- ========== LOGIN PAGE ========== -->
+<div id="loginPage" class="auth-page">
+  <div class="auth-container">
+    <div class="auth-left">
+      <h1 class="brand-logo">SocialBook</h1>
+      <p class="brand-tagline">বন্ধুদের সাথে সংযুক্ত থাকুন এবং জীবন শেয়ার করুন।</p>
     </div>
+    <div class="auth-right">
+      <div class="auth-card">
+        <input type="text" id="loginEmail" placeholder="ইমেইল বা ফোন নম্বর">
+        <input type="password" id="loginPassword" placeholder="পাসওয়ার্ড">
+        <button class="btn-primary" onclick="loginUser()">লগইন</button>
+        <a href="#" class="forgot-link">পাসওয়ার্ড ভুলে গেছেন?</a>
+        <hr>
+        <button class="btn-success" onclick="showSignup()">নতুন অ্যাকাউন্ট তৈরি করুন</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ===== Navigation Bar ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <i class="fas fa-code"></i> Tech<span>Hub</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-right">
-                <a href="#contact" class="btn-quote">Free Quote</a>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+<!-- ========== SIGNUP PAGE ========== -->
+<div id="signupPage" class="auth-page hidden">
+  <div class="signup-container">
+    <div class="signup-header">
+      <h1 class="brand-logo">SocialBook</h1>
+      <p>দ্রুত এবং সহজে অ্যাকাউন্ট তৈরি করুন।</p>
+    </div>
+    <div class="signup-card">
+      <div class="input-row">
+        <input type="text" id="signupFirstName" placeholder="প্রথম নাম">
+        <input type="text" id="signupLastName" placeholder="শেষ নাম">
+      </div>
+      <input type="text" id="signupEmail" placeholder="মোবাইল নম্বর বা ইমেইল">
+      <input type="password" id="signupPassword" placeholder="নতুন পাসওয়ার্ড">
+      <div class="input-row">
+        <select id="signupDay"><option>দিন</option></select>
+        <select id="signupMonth">
+          <option>মাস</option>
+          <option>জানুয়ারি</option><option>ফেব্রুয়ারি</option>
+          <option>মার্চ</option><option>এপ্রিল</option>
+          <option>মে</option><option>জুন</option>
+          <option>জুলাই</option><option>আগস্ট</option>
+          <option>সেপ্টেম্বর</option><option>অক্টোবর</option>
+          <option>নভেম্বর</option><option>ডিসেম্বর</option>
+        </select>
+        <select id="signupYear"><option>বছর</option></select>
+      </div>
+      <div class="gender-row">
+        <label><input type="radio" name="gender" value="female"> মহিলা</label>
+        <label><input type="radio" name="gender" value="male"> পুরুষ</label>
+        <label><input type="radio" name="gender" value="other"> অন্যান্য</label>
+      </div>
+      <p class="terms-text">সাইন আপ ক্লিক করে আপনি আমাদের শর্তাবলী মেনে নিচ্ছেন।</p>
+      <button class="btn-success" onclick="signupUser()">সাইন আপ</button>
+      <button class="btn-link" onclick="showLogin()">ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MAIN APP ========== -->
+<div id="mainApp" class="hidden">
+
+  <!-- TOP NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2 class="nav-logo">SocialBook</h2>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="বন্ধু খুঁজুন..." id="searchInput">
+      </div>
+    </div>
+    <div class="nav-center">
+      <button class="nav-icon active" title="হোম"><i class="fas fa-home"></i></button>
+      <button class="nav-icon" title="বন্ধু"><i class="fas fa-user-friends"></i></button>
+      <button class="nav-icon" title="ভিডিও"><i class="fas fa-video"></i></button>
+      <button class="nav-icon" title="মার্কেটপ্লেস"><i class="fas fa-store"></i></button>
+      <button class="nav-icon" title="গেম"><i class="fas fa-gamepad"></i></button>
+    </div>
+    <div class="nav-right">
+      <button class="nav-icon" title="মেসেঞ্জার"><i class="fas fa-comment-dots"></i></button>
+      <button class="nav-icon" title="নোটিফিকেশন"><i class="fas fa-bell"></i></button>
+      <div class="profile-menu" onclick="toggleProfileMenu()">
+        <img id="navAvatar" src="https://i.pravatar.cc/40?img=12" alt="profile">
+      </div>
+      <div id="profileDropdown" class="profile-dropdown hidden">
+        <div class="dropdown-header" onclick="showProfile()">
+          <img id="dropdownAvatar" src="https://i.pravatar.cc/40?img=12">
+          <span id="dropdownName">ব্যবহারকারী</span>
         </div>
-    </nav>
+        <hr>
+        <div class="dropdown-item"><i class="fas fa-cog"></i> সেটিংস</div>
+        <div class="dropdown-item"><i class="fas fa-question-circle"></i> সাহায্য</div>
+        <div class="dropdown-item" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> লগআউট</div>
+      </div>
+    </div>
+  </nav>
 
-    <!-- ===== Hero Section ===== -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-tag">🚀 #1 Digital Agency</span>
-                <h1>Make Your Business <span class="highlight">Digital</span> Today</h1>
-                <p>We provide modern web development, mobile apps, graphic design and digital marketing services. We are committed to turning your dreams into reality.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">View Our Services <i class="fas fa-arrow-right"></i></a>
-                    <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3>500+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat">
-                        <h3>300+</h3>
-                        <p>Happy Clients</p>
-                    </div>
-                    <div class="stat">
-                        <h3>10+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Team Working">
-            </div>
+  <!-- MAIN LAYOUT -->
+  <div class="main-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="left-sidebar">
+      <div class="sidebar-item" onclick="showProfile()">
+        <img id="sidebarAvatar" src="https://i.pravatar.cc/40?img=12">
+        <span id="sidebarName">ব্যবহারকারী</span>
+      </div>
+      <div class="sidebar-item"><i class="fas fa-user-friends"></i><span>বন্ধু</span></div>
+      <div class="sidebar-item"><i class="fas fa-users"></i><span>গ্রুপ</span></div>
+      <div class="sidebar-item"><i class="fas fa-store"></i><span>মার্কেটপ্লেস</span></div>
+      <div class="sidebar-item"><i class="fas fa-tv"></i><span>ভিডিও</span></div>
+      <div class="sidebar-item"><i class="fas fa-bookmark"></i><span>সেভ করা</span></div>
+      <div class="sidebar-item"><i class="fas fa-clock"></i><span>মেমোরি</span></div>
+      <hr>
+      <h4 class="sidebar-heading">তোমার শর্টকাট</h4>
+      <div class="sidebar-item"><i class="fas fa-code"></i><span>ডেভেলপার গ্রুপ</span></div>
+      <div class="sidebar-item"><i class="fas fa-camera"></i><span>ফটোগ্রাফি</span></div>
+    </aside>
+
+    <!-- CENTER FEED -->
+    <main class="feed">
+      
+      <!-- STORIES -->
+      <div class="stories-container">
+        <div class="story-card create-story" onclick="createStory()">
+          <div class="story-img">
+            <img id="storyAvatar" src="https://i.pravatar.cc/150?img=12">
+          </div>
+          <div class="story-create-btn">+</div>
+          <p>স্টোরি তৈরি করুন</p>
         </div>
-        <div class="scroll-down">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        <div class="story-card">
+          <img src="https://picsum.photos/150/250?random=1">
+          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=1"></div>
+          <p>রাহুল</p>
         </div>
-    </section>
-
-    <!-- ===== About Section ===== -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Us</span>
-                <h2>Why Choose <span class="highlight">Us</span>?</h2>
-                <p>With 10 years of experience, a skilled team and modern technology, we provide the best solutions for your business.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="About Us">
-                    <div class="experience-badge">
-                        <h3>10+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <h3>We Are Your Digital Partner</h3>
-                    <p>TechHub is a professional digital agency serving Bangladesh and internationally since 2014. Our goal is to make every business successful in the digital world.</p>
-                    <ul class="about-list">
-                        <li><i class="fas fa-check-circle"></i> Experienced & skilled developer team</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
-                        <li><i class="fas fa-check-circle"></i> Best service at affordable price</li>
-                        <li><i class="fas fa-check-circle"></i> On-time project delivery</li>
-                        <li><i class="fas fa-check-circle"></i> Lifetime free support</li>
-                        <li><i class="fas fa-check-circle"></i> 100% satisfaction guarantee</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Contact Us</a>
-                </div>
-            </div>
-
-            <!-- Feature Boxes -->
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fas fa-rocket"></i>
-                    <h4>Fast Delivery</h4>
-                    <p>We complete projects on time</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-shield-alt"></i>
-                    <h4>Safe & Reliable</h4>
-                    <p>Your data is fully protected</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-headset"></i>
-                    <h4>24/7 Support</h4>
-                    <p>Ready to help anytime</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-award"></i>
-                    <h4>Premium Quality</h4>
-                    <p>We ensure the best quality service</p>
-                </div>
-            </div>
+        <div class="story-card">
+          <img src="https://picsum.photos/150/250?random=2">
+          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=2"></div>
+          <p>সাদিয়া</p>
         </div>
-    </section>
-
-    <!-- ===== Services Section ===== -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Services</span>
-                <h2>What We <span class="highlight">Provide</span></h2>
-                <p>Complete digital solutions tailored to your business needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>We build modern and responsive websites using React, Next.js, Laravel and WordPress.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile app development for Android and iOS platforms.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Graphic Design</h3>
-                    <p>Complete visual identity design including logo, branding, posters and banners.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Complete digital marketing services including SEO, social media marketing and Google Ads.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>E-commerce Solutions</h3>
-                    <p>Complete e-commerce website solution with payment gateway integration.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>SEO Optimization</h3>
-                    <p>Complete service to bring your website to the first page of Google.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+        <div class="story-card">
+          <img src="https://picsum.photos/150/250?random=3">
+          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=3"></div>
+          <p>করিম</p>
         </div>
-    </section>
-
-    <!-- ===== Counter Section ===== -->
-    <section class="counters">
-        <div class="container counters-grid">
-            <div class="counter-box">
-                <i class="fas fa-project-diagram"></i>
-                <h3 class="counter" data-target="500">0</h3>
-                <p>Projects Completed</p>
-            </div>
-            <div class="counter-box">
-                <i class="fas fa-users"></i>
-                <h3 class="counter" data-target="300">0</h3>
-                <p>Happy Clients</p>
-            </div>
-            <div class="counter-box">
-                <i class="fas fa-user-tie"></i>
-                <h3 class="counter" data-target="25">0</h3>
-                <p>Team Members</p>
-            </div>
-            <div class="counter-box">
-                <i class="fas fa-trophy"></i>
-                <h3 class="counter" data-target="15">0</h3>
-                <p>Awards Won</p>
-            </div>
+        <div class="story-card">
+          <img src="https://picsum.photos/150/250?random=4">
+          <div class="story-avatar"><img src="https://i.pravatar.cc/40?img=4"></div>
+          <p>নিলা</p>
         </div>
-    </section>
+      </div>
 
-    <!-- ===== Portfolio Section ===== -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Work</span>
-                <h2>Recent <span class="highlight">Projects</span></h2>
-                <p>Some of our notable completed projects</p>
-            </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Website</button>
-                <button class="filter-btn" data-filter="app">App</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <h4>E-commerce Website</h4>
-                        <p>Web Development</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500" alt="Project 2">
-                    <div class="portfolio-overlay">
-                        <h4>Food Delivery App</h4>
-                        <p>Mobile App</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="design">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h4>Brand Identity</h4>
-                        <p>Graphic Design</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Project 4">
-                    <div class="portfolio-overlay">
-                        <h4>Corporate Website</h4>
-                        <p>Web Development</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500" alt="Project 5">
-                    <div class="portfolio-overlay">
-                        <h4>Fitness Tracker</h4>
-                        <p>Mobile App</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="design">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500" alt="Project 6">
-                    <div class="portfolio-overlay">
-                        <h4>Marketing Campaign</h4>
-                        <p>Graphic Design</p>
-                        <a href="#"><i class="fas fa-link"></i></a>
-                    </div>
-                </div>
-            </div>
+      <!-- CREATE POST -->
+      <div class="create-post">
+        <div class="post-top">
+          <img id="postAvatar" src="https://i.pravatar.cc/40?img=12">
+          <input type="text" id="postInput" placeholder="কি ভাবছেন, লিখুন...">
         </div>
-    </section>
-
-    <!-- ===== Team Section ===== -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Team</span>
-                <h2>Skilled <span class="highlight">Team Members</span></h2>
-                <p>Who work to make your project successful</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-info">
-                        <h4>MD Ashaduzzaman </h4>
-                        <p>CEO & Founder</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-info">
-                        <h4>Sohag Islam</h4>
-                        <p>Head of Design</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-info">
-                        <h4>Sabbir Hossain</h4>
-                        <p>Lead Developer</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-info">
-                        <h4>Md Zzaman </h4>
-                        <p>Marketing Manager</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="post-options">
+          <button onclick="openImagePicker()"><i class="fas fa-image" style="color:#45bd62;"></i> ছবি</button>
+          <button><i class="fas fa-video" style="color:#f3425f;"></i> ভিডিও</button>
+          <button><i class="fas fa-smile" style="color:#f7b928;"></i> ফিলিংস</button>
+          <input type="file" id="imageUpload" accept="image/*" hidden>
         </div>
-    </section>
+        <img id="imagePreview" class="image-preview hidden">
+        <button class="btn-post" onclick="createPost()">পোস্ট করুন</button>
+      </div>
 
-    <!-- ===== Testimonials Section ===== -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Client Reviews</span>
-                <h2>What Our Clients <span class="highlight">Say</span></h2>
-            </div>
-            <div class="testimonial-slider" id="testimonialSlider">
-                <div class="testimonial-card active">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"TechHub's team built our e-commerce website. Their quality of work and punctuality is outstanding. We are very satisfied."</p>
-                    <div class="testimonial-author">
-                        <div>
-                            <h4>Abir Hasan</h4>
-                            <p>CEO, ShopBD</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"TechHub built our food delivery app. The app is very user-friendly and fast. Thanks to TechHub!"</p>
-                    <div class="testimonial-author">
-                        <div>
-                            <h4>Riyad islam </h4>
-                            <p>Founder, FoodExpress</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"TechHub is the best for graphic design. Their logos and branding have helped our business grow a lot."</p>
-                    <div class="testimonial-author">
-                        <div>
-                            <h4>Rakib Ahmed</h4>
-                            <p>MD, Creative Studio</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-dots" id="sliderDots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-            </div>
+      <!-- POSTS CONTAINER -->
+      <div id="postsContainer"></div>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="right-sidebar">
+      <h4 class="sidebar-heading">স্পন্সরড</h4>
+      <div class="sponsor-item">
+        <img src="https://picsum.photos/100/100?random=10">
+        <p>নতুন গ্যাজেট কিনুন</p>
+      </div>
+      <div class="sponsor-item">
+        <img src="https://picsum.photos/100/100?random=11">
+        <p>ফ্রি কোর্স করুন</p>
+      </div>
+      <hr>
+      <h4 class="sidebar-heading">জন্মদিন 🎂</h4>
+      <div class="birthday-item">
+        <img src="https://i.pravatar.cc/40?img=8">
+        <div>
+          <strong>আয়েশা</strong>
+          <p>আজ জন্মদিন</p>
         </div>
-    </section>
+      </div>
+      <hr>
+      <h4 class="sidebar-heading">বন্ধু</h4>
+      <div class="contact-item">
+        <img src="https://i.pravatar.cc/40?img=5">
+        <span>রাহুল আহমেদ</span>
+        <i class="fas fa-circle online"></i>
+      </div>
+      <div class="contact-item">
+        <img src="https://i.pravatar.cc/40?img=6">
+        <span>সাদিয়া খান</span>
+        <i class="fas fa-circle online"></i>
+      </div>
+      <div class="contact-item">
+        <img src="https://i.pravatar.cc/40?img=7">
+        <span>করিম হোসেন</span>
+      </div>
+      <div class="contact-item">
+        <img src="https://i.pravatar.cc/40?img=9">
+        <span>নিলা রহমান</span>
+        <i class="fas fa-circle online"></i>
+      </div>
+    </aside>
 
-    <!-- ===== Pricing Section ===== -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pricing Plans</span>
-                <h2>The Best <span class="highlight">Package</span> For You</h2>
-                <p>Choose a package according to your needs</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <div class="price">$99<span>/project</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 5 Page Website</li>
-                        <li><i class="fas fa-check"></i> Responsive Design</li>
-                        <li><i class="fas fa-check"></i> Basic SEO</li>
-                        <li><i class="fas fa-check"></i> Contact Form</li>
-                        <li><i class="fas fa-times disabled"></i> Logo Design</li>
-                        <li><i class="fas fa-times disabled"></i> 24/7 Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline-dark">Get Package</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3>Standard</h3>
-                    <div class="price">$299<span>/project</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 10 Page Website</li>
-                        <li><i class="fas fa-check"></i> Custom Design</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO</li>
-                        <li><i class="fas fa-check"></i> Logo Design</li>
-                        <li><i class="fas fa-check"></i> Social Media Setup</li>
-                        <li><i class="fas fa-times disabled"></i> 24/7 Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Get Package</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Premium</h3>
-                    <div class="price">$599<span>/project</span></div>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
-                        <li><i class="fas fa-check"></i> Premium Design</li>
-                        <li><i class="fas fa-check"></i> Complete SEO</li>
-                        <li><i class="fas fa-check"></i> Branding Solution</li>
-                        <li><i class="fas fa-check"></i> 1 Year Free Support</li>
-                        <li><i class="fas fa-check"></i> 24/7 Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline-dark">Get Package</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  </div>
+</div>
 
-    <!-- ===== Blog Section ===== -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Blog</span>
-                <h2>Latest <span class="highlight">Articles</span></h2>
-                <p>Latest news and tips from the digital world</p>
-            </div>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> January 15, 2026</span>
-                            <span><i class="fas fa-user"></i> MD Ashaduzzaman </span>
-                        </div>
-                        <h3>Web Development Trends in 2026</h3>
-                        <p>What new trends are coming to web development in 2026 and how they can benefit your business...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> January 10, 2026</span>
-                            <span><i class="fas fa-user"></i> Mst......</span>
-                        </div>
-                        <h3>10 Important SEO Tips</h3>
-                        <p>Follow these 10 SEO tips to bring your website to the first page of Google...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> January 5, 2026</span>
-                            <span><i class="fas fa-user"></i> MD....... </span>
-                        </div>
-                        <h3>React vs Vue: Which to Learn?</h3>
-                        <p>Comparison between React and Vue and which one is suitable for your project...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+<!-- IMAGE VIEWER MODAL -->
+<div id="imageModal" class="modal hidden">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
-    <!-- ===== FAQ Section ===== -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Common Questions</span>
-                <h2>Frequently <span class="highlight">Asked Questions</span></h2>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>How long does it take to build a website?</h4>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Usually it takes 7-15 days to build a standard website. For complex projects, it can take up to 30 days.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>How do I make payments?</h4>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We take 50% advance and 50% after project delivery. Payments can be made through bKash, Nagad, bank transfer and various other methods.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Do I get support after the project?</h4>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, every package includes free support from 3 months to 1 year. After that, we provide support at affordable rates.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Do you do custom design?</h4>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! We create completely custom designs that match your brand and are unique.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>What is the refund policy?</h4>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Full refund if cancelled before project start. If work has started, adjustment is made according to progress.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CTA Section ===== -->
-    <section class="cta">
-        <div class="container cta-content">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Contact us today and get a free consultation</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Free Consultation</a>
-                <a href="tel:018........" class="btn btn-outline-light"><i class="fas fa-phone"></i> Call Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== Contact Section ===== -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contact</span>
-                <h2>Get in <span class="highlight">Touch</span> With Us</h2>
-                <p>Write to us for any question or project</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-box">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>.... Banani, Dhaka-1213, Bangladesh</p>
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>018........</p>
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@techhubbd.com</p>
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Hours</h4>
-                            <p>Sat - Thu: 9AM - 8PM</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <input type="text" placeholder="Your Name *" required>
-                        <input type="email" placeholder="Your Email *" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="tel" placeholder="Phone Number">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <textarea placeholder="Write Your Message *" rows="6" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== Newsletter ===== -->
-    <section class="newsletter">
-        <div class="container newsletter-content">
-            <div>
-                <h3>Subscribe to Newsletter</h3>
-                <p>Subscribe to get the latest updates and offers first</p>
-            </div>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ===== Footer ===== -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="footer-logo"><i class="fas fa-code"></i> Tech<span>Hub</span></a>
-                <p>We are a professional digital agency providing the best services since 2014.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Mobile Apps</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">SEO Optimization</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><i class="fas fa-map-marker-alt"></i>....Banani, Dhaka</p>
-                <p><i class="fas fa-phone"></i> 018........</p>
-                <p><i class="fas fa-envelope"></i> info@techhub.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 TechHubBD. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-                                          </html>
+</html>
